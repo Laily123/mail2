@@ -13,3 +13,6 @@ echo “mail content”| mail2 -s test aa@aa.com
 mail2 -s test aa@aa.com< file
 给多个用户发送邮件
 mail2 -s test -c admin@aispider.com  root@aispider.com< file
+
+#### 其他
+项目使用 govendor 管理依赖
