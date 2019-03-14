@@ -46,6 +46,11 @@ func main() {
 			Usage: "attach",
 			Value: nil,
 		},
+		cli.StringFlag{
+			Name:  "config",
+			Usage: "config file path",
+			Value: "",
+		},
 	}
 
 	app.Commands = []cli.Command{
@@ -64,7 +69,7 @@ func main() {
 			cli.ShowAppHelp(c)
 			return nil
 		}
-		SendMail(c.String("s"), c.String("m"), c.Args(), c.StringSlice("a"))
+		SendMail(c.String("config"), c.String("s"), c.String("m"), c.Args(), c.StringSlice("a"))
 		return nil
 	}
 

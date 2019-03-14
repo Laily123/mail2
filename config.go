@@ -83,9 +83,12 @@ password=`
 	fmt.Println("create config file succ")
 }
 
-func loadConfig() *configStruct {
+func loadConfig(configPath string) *configStruct {
 	c := &configStruct{}
-	_, err := toml.DecodeFile(configDir+"/"+configFileName, c)
+	if configPath == "" {
+		configPath = configDir + "/" + configFileName
+	}
+	_, err := toml.DecodeFile(configPath, c)
 	if err != nil {
 		fmt.Println("decode config file err: ", err)
 		os.Exit(1)

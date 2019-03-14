@@ -10,8 +10,8 @@ import (
 	发送邮件逻辑
 */
 
-func SendMail(subject, msg string, to, attachs []string) {
-	config := loadConfig()
+func SendMail(configPath, subject, msg string, to, attachs []string) {
+	config := loadConfig(configPath)
 
 	m := gomail.NewMessage()
 	m.SetHeader("From", config.Mail)
