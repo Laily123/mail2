@@ -21,7 +21,7 @@ mail2 -s test -c admin@aispider.com  root@aispider.com< file
 */
 
 var (
-	subject  = ""
+	// subject  = ""
 	attaches = []string{}
 )
 
@@ -66,8 +66,7 @@ func main() {
 
 	app.Action = func(c *cli.Context) error {
 		if len(os.Args) == 1 {
-			cli.ShowAppHelp(c)
-			return nil
+			return cli.ShowAppHelp(c)
 		}
 		SendMail(c.String("config"), c.String("s"), c.String("m"), c.Args(), c.StringSlice("a"))
 		return nil

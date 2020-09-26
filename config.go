@@ -5,8 +5,7 @@ import (
 	"os"
 
 	"github.com/BurntSushi/toml"
-
-	pathLib "github.com/Laily123/goutil/path"
+	pathLib "github.com/hilaily/kit/path"
 )
 
 /*
